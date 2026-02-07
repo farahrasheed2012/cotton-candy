@@ -1,35 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>About | Sugar Swirls by Soha</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Sugar Swirls by Soha</title>
+  <meta name="description" content="Meet Soha, the young entrepreneur behind Sugar Swirls — freshly spun cotton candy made with love in Austin, TX.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
 <nav class="navbar">
-      <div class="logo">
-      <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
-      <span>Sugar Swirls by Soha</span>
-    </div>
+  <div class="logo">
+    <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    <span>Sugar Swirls by Soha</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="flavors.html">Flavors</a>
     <a href="order.html">Order</a>
     <a href="quote.html">Request Quote</a>
-    <a href="about.html">About</a>
+    <a href="about.html" class="active">About</a>
   </div>
 </nav>
 
 <section class="about-section">
-  <h2>About Sugar Swirls by Soha</h2>
-  
-  <div class="about-content">
+  <h2 class="section-title fade-in">About Sugar Swirls by Soha</h2>
+  <p class="section-subtitle fade-in">The story behind the sweetness</p>
+
+  <div class="about-content fade-in">
     <h3>Meet Soha</h3>
     <p>Hi! I'm Soha, a middle school student at Grisham Middle School in Canyon Creek, Austin, TX with a passion for creating magical, sweet experiences. Sugar Swirls by Soha is my small business dedicated to bringing joy and delicious cotton candy to celebrations and events.</p>
 
     <h3>Our Story</h3>
-    <p>What started as a fun project has grown into a beloved local business! I noticed that everyone loves cotton candy—it brings back childhood memories and adds a special touch to any occasion. With a commitment to quality ingredients and creative flavors, I decided to share my passion with my community.</p>
+    <p>What started as a fun project has grown into a beloved local business! I noticed that everyone loves cotton candy — it brings back childhood memories and adds a special touch to any occasion. With a commitment to quality ingredients and creative flavors, I decided to share my passion with my community.</p>
 
     <h3>Our Mission</h3>
     <p>To create fresh, delicious cotton candy that makes every moment sweeter. Whether it's a birthday party, family event, or community gathering, Sugar Swirls by Soha is here to add smiles and sweetness to your special days.</p>
@@ -37,15 +45,52 @@
     <h3>Why Choose Us?</h3>
     <ul>
       <li><strong>Freshly Spun:</strong> Made to order for maximum freshness and fluffiness</li>
-      <li><strong>Creative Flavors:</strong> Classic favorites and unique flavor combinations</li>
+      <li><strong>8 Fun Flavors:</strong> Classic favorites and exciting new flavors like Birthday Cake and Watermelon</li>
       <li><strong>Quality:</strong> Made with care and attention to detail</li>
-      <li><strong>Customizable:</strong> Perfect for any event size—from small gatherings to large celebrations</li>
+      <li><strong>Customizable:</strong> Perfect for any event size — from small gatherings to large celebrations</li>
       <li><strong>Local:</strong> Supporting a young entrepreneur in your community</li>
     </ul>
 
     <h3>Get in Touch</h3>
-    <p>Have questions or want to place a special order? Reach out to us at <strong>soha.zaara.ali@gmail.com</strong>. We'd love to make your next event sweeter!</p>
+    <p>Have questions or want to place a special order? Reach out to us at <strong>soha.zaara.ali@gmail.com</strong> or visit our <a href="order.html" style="color:#e84d8a;font-weight:600;">Order page</a>. We'd love to make your next event sweeter!</p>
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sugar Swirls by Soha</h4>
+      <p>Freshly spun cotton candy for every occasion.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="order.html">Order</a>
+      <a href="quote.html">Request Quote</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 soha.zaara.ali@gmail.com</p>
+      <p>📍 Austin, TX</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
