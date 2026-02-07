@@ -1,19 +1,29 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Cotton Candy Cotton Candy</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sugar Swirls by Soha | Freshly Spun Cotton Candy</title>
+  <meta name="description" content="Freshly spun cotton candy with premium flavors for every celebration. Order online from Sugar Swirls by Soha in Austin, TX.">
+  <meta property="og:title" content="Sugar Swirls by Soha | Freshly Spun Cotton Candy">
+  <meta property="og:description" content="Delicious, freshly spun cotton candy for birthdays, parties, and events.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
 <nav class="navbar">
-    <div class="logo">
-      <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
-      <span>Sugar Swirls by Soha</span>
-    </div>
+  <div class="logo">
+    <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    <span>Sugar Swirls by Soha</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="flavors.html">Flavors</a>
     <a href="order.html">Order</a>
     <a href="quote.html">Request Quote</a>
@@ -21,104 +31,174 @@
   </div>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
-  <div class="hero-content">
-    <h1>Sugar Swirls by Soha</h1>
-    <p>Freshly spun cotton candy with premium flavors for every celebration</p>
-    <a href="order.html" class="primary-btn">Place an Order</a>
-    <a href="flavors.html" class="secondary-btn">Explore Flavors</a>
+  <div class="hero-content fade-in-left">
+    <h1><span>Sugar Swirls</span> by Soha</h1>
+    <p>Freshly spun cotton candy with premium flavors for every celebration. Made with love in Austin, TX!</p>
+    <div class="hero-buttons">
+      <a href="order.html" class="primary-btn">Place an Order</a>
+      <a href="flavors.html" class="secondary-btn">Explore Flavors</a>
+    </div>
   </div>
-  <div class="hero-image">
-    <img src="images/inayacottoncandy.jpg" alt="Sugar Swirls Cotton Candy">
+  <div class="hero-image fade-in-right">
+    <img src="images/inayacottoncandy.jpg" alt="Colorful freshly spun cotton candy by Sugar Swirls">
   </div>
 </section>
 
+<!-- Features -->
 <section class="features">
-  <div class="card">
+  <div class="card fade-in">
     <div class="card-icon">🎡</div>
     <h3>Freshly Spun</h3>
-    <p>Made to order for maximum freshness and fluffiness</p>
+    <p>Made to order for maximum freshness and fluffiness every time</p>
   </div>
-  <div class="card">
+  <div class="card fade-in">
     <div class="card-icon">🍭</div>
-    <h3>Fun Flavors</h3>
-    <p>Classic and creative flavors to delight all tastes</p>
+    <h3>8 Fun Flavors</h3>
+    <p>Classic favorites and creative new flavors to delight all tastes</p>
   </div>
-  <div class="card">
+  <div class="card fade-in">
     <div class="card-icon">🎉</div>
     <h3>Perfect for Events</h3>
-    <p>Birthdays, weddings, fairs, and more</p>
+    <p>Birthdays, school events, fairs, and more — any celebration!</p>
   </div>
 </section>
 
+<!-- Pricing -->
 <section class="pricing">
-  <h2>Simple Pricing</h2>
+  <h2 class="section-title fade-in">Simple Pricing</h2>
+  <p class="section-subtitle fade-in">No hidden fees. Just sweetness.</p>
   <div class="pricing-cards">
-    <div class="price-card">
+    <div class="price-card fade-in">
       <h3>Single Cone</h3>
-      <div class="price">$2</div>
-      <p>One fresh cone</p>
+      <div class="price">$3</div>
+      <p>One fresh cotton candy cone, any flavor</p>
       <a href="order.html" class="primary-btn">Order Now</a>
     </div>
-    <div class="price-card featured">
+    <div class="price-card featured fade-in">
       <h3>Party Pack</h3>
       <div class="price">$40</div>
-      <p>25 cones, mixed flavors</p>
+      <p>25 cones with mixed flavors — best value!</p>
       <a href="order.html" class="primary-btn">Order Now</a>
     </div>
-    <div class="price-card">
+    <div class="price-card fade-in">
       <h3>Custom Quote</h3>
       <div class="price">Varies</div>
-      <p>Bulk orders & events</p>
+      <p>Bulk orders & event packages, tailored to you</p>
       <a href="quote.html" class="primary-btn">Get Quote</a>
     </div>
   </div>
 </section>
 
+<!-- Testimonials -->
 <section class="testimonials">
-  <h2>Customer Love</h2>
+  <h2 class="section-title fade-in">Customer Love</h2>
+  <p class="section-subtitle fade-in">See what people are saying about our cotton candy!</p>
   <div class="testimonial-grid">
-    <div class="testimonial">
+    <div class="testimonial fade-in">
       <div class="stars">⭐⭐⭐⭐⭐</div>
       <p>"The best cotton candy I've ever had! So fresh and the flavors are amazing!"</p>
-      <p class="author">- Shadab A.</p>
+      <p class="author">— Shadab A.</p>
     </div>
-    <div class="testimonial">
+    <div class="testimonial fade-in">
       <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"Perfect for my daughter's birthday party. Everyone loved it!"</p>
-      <p class="author">- Inaya S.</p>
+      <p>"Perfect for my daughter's birthday party. Everyone loved it! The kids couldn't get enough."</p>
+      <p class="author">— Inaya S.</p>
     </div>
-    <div class="testimonial">
+    <div class="testimonial fade-in">
       <div class="stars">⭐⭐⭐⭐⭐</div>
-      <p>"Beautiful presentation and very fresh and fluffy. Highly recommend!"</p>
-      <p class="author">- Emma L.</p>
+      <p>"Beautiful presentation and very fresh and fluffy. The new Birthday Cake flavor is to die for!"</p>
+      <p class="author">— Emma L.</p>
     </div>
   </div>
 </section>
 
+<!-- Gallery -->
 <section class="gallery">
-  <h2>Gallery</h2>
+  <h2 class="section-title fade-in">Gallery</h2>
+  <p class="section-subtitle fade-in">A peek at our creations</p>
   <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="images/PinkVanilla.png" alt="Cotton Candy Creation">
-      <p>Classic Pink</p>
+    <div class="gallery-item fade-in" onclick="openLightbox(this)">
+      <img src="images/PinkVanilla.png" alt="Pink Vanilla Cotton Candy">
+      <p>Classic Pink Vanilla</p>
     </div>
-    <div class="gallery-item">
-      <img src="images/BlueRaspberry.png" alt="Blue Cotton Candy">
+    <div class="gallery-item fade-in" onclick="openLightbox(this)">
+      <img src="images/BlueRaspberry.png" alt="Blue Raspberry Cotton Candy">
       <p>Blue Raspberry</p>
     </div>
-    <div class="gallery-item">
-      <img src="images/Strawberry.png" alt="Rainbow Cotton Candy">
-      <p>Rainbow Mix</p>
+    <div class="gallery-item fade-in" onclick="openLightbox(this)">
+      <img src="images/Strawberry.png" alt="Strawberry Cotton Candy">
+      <p>Fresh Strawberry</p>
     </div>
   </div>
 </section>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Gallery image enlarged">
+</div>
+
+<!-- FAQ -->
+<section class="faq">
+  <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+  <p class="section-subtitle fade-in">Everything you need to know</p>
+  <div class="faq-list">
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>How do I place an order?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Visit our <a href="order.html" style="color:#e84d8a;font-weight:600;">Order page</a>, select your flavors and quantities, fill in your details, and submit. We'll confirm your order by email!
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>How far in advance should I order?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        We recommend ordering at least 3 days in advance. For large events or party packs, a week's notice is ideal so we can make everything fresh!
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Do you deliver or is it pickup only?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        We offer both pickup and local delivery in the Canyon Creek / Austin, TX area. Delivery details can be arranged when you place your order.
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Are there any allergens in your cotton candy?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Our cotton candy is made from sugar and flavoring. It is gluten-free, dairy-free, and nut-free. If you have specific allergy concerns, please reach out to us before ordering.
+      </div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <span>Can I request custom colors or flavors for my event?</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-answer">
+        Absolutely! We love creating custom combinations. Use our <a href="quote.html" style="color:#e84d8a;font-weight:600;">Request a Quote</a> page to tell us about your event and we'll work with you on colors and flavors.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-section">
       <h4>Sugar Swirls by Soha</h4>
-      <p>Freshly spun cotton candy for every occasion</p>
+      <p>Freshly spun cotton candy for every occasion. Made with love by a young entrepreneur in Austin, TX.</p>
     </div>
     <div class="footer-section">
       <h4>Quick Links</h4>
@@ -130,20 +210,55 @@
     <div class="footer-section">
       <h4>Follow Us</h4>
       <div class="social-links">
-        <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        <a href="https://www.facebook.com" target="_blank">Facebook</a>
-        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
-        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
       </div>
     </div>
     <div class="footer-section">
       <h4>Contact</h4>
-      <p>Email: soha.zaara.ali@gmail.com</p>
+      <p>📧 soha.zaara.ali@gmail.com</p>
+      <p>📍 Austin, TX</p>
     </div>
   </div>
   <div class="footer-bottom">
     <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
   </div>
 </footer>
+
+<!-- Scripts -->
+<script>
+// Mobile menu toggle
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+
+// Lightbox
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  document.getElementById('lightbox-img').src = img.src;
+  document.getElementById('lightbox').classList.add('active');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+// FAQ toggle
+function toggleFaq(el) {
+  el.parentElement.classList.toggle('open');
+}
+</script>
+
 </body>
 </html>

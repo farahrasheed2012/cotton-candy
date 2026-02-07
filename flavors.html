@@ -1,33 +1,206 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Flavors | Cotton Candy</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flavors | Sugar Swirls by Soha</title>
+  <meta name="description" content="Explore our 8 delicious cotton candy flavors — from classic Pink Vanilla to Birthday Cake and Watermelon!">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
 <nav class="navbar">
   <div class="logo">
-  <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha">
-  <span>Sugar Swirls by Soha</span>
-</div>
+    <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    <span>Sugar Swirls by Soha</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Home</a>
-    <a href="flavors.html">Flavors</a>
+    <a href="flavors.html" class="active">Flavors</a>
     <a href="order.html">Order</a>
     <a href="quote.html">Request Quote</a>
     <a href="about.html">About</a>
   </div>
 </nav>
 
+<!-- Flavors Section -->
 <section class="flavors-section">
-  <h2>Our Flavors</h2>
+  <h2 class="section-title fade-in">Our Flavors</h2>
+  <p class="section-subtitle fade-in">8 delicious flavors to choose from — all freshly spun to order!</p>
+
   <div class="flavor-cards">
-    <div class="flavor-card"><img src="images/PinkVanilla.png" alt="Pink Vanilla"><p>Pink Vanilla - $3</p></div>
-    <div class="flavor-card"><img src="images/BlueRaspberry.png" alt="Blue Raspberry"><p>Blue Raspberry - $3</p></div>
-    <div class="flavor-card"><img src="images/Strawberry.png" alt="Strawberry"><p>Strawberry - $3</p></div>
+
+    <!-- Pink Vanilla -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap">
+        <img src="images/PinkVanilla.png" alt="Pink Vanilla Cotton Candy">
+        <span class="flavor-badge">Classic</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Pink Vanilla</h3>
+        <p class="flavor-desc">Our signature classic! Sweet, smooth vanilla flavor in a beautiful pink cloud. A timeless favorite for all ages.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blue Raspberry -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap">
+        <img src="images/BlueRaspberry.png" alt="Blue Raspberry Cotton Candy">
+        <span class="flavor-badge">Popular</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Blue Raspberry</h3>
+        <p class="flavor-desc">Bold, tangy, and fun! A vibrant blue cloud bursting with sweet-tart raspberry flavor that kids absolutely love.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Strawberry -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap">
+        <img src="images/Strawberry.png" alt="Strawberry Cotton Candy">
+        <span class="flavor-badge">Classic</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Strawberry</h3>
+        <p class="flavor-desc">Juicy, sweet strawberry goodness in every bite. Like biting into a fresh summer strawberry — pure delight!</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Banana -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap" style="background:linear-gradient(135deg,#fff9c4,#fff8e1);">
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;">🍌</div>
+        <span class="flavor-badge" style="background:#f9a825;">New!</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Banana</h3>
+        <p class="flavor-desc">Creamy and tropical! A smooth banana flavor that tastes like a carnival treat. Sweet, mellow, and totally addictive.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Birthday Cake -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap" style="background:linear-gradient(135deg,#f8bbd0,#e1bee7);">
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;">🎂</div>
+        <span class="flavor-badge" style="background:#ab47bc;">New!</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Birthday Cake</h3>
+        <p class="flavor-desc">It's your birthday in cotton candy form! Sprinkle-sweet cake batter flavor that makes every day feel like a celebration.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Watermelon -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap" style="background:linear-gradient(135deg,#ffcdd2,#c8e6c9);">
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;">🍉</div>
+        <span class="flavor-badge" style="background:#43a047;">New!</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Watermelon</h3>
+        <p class="flavor-desc">Refreshing summer vibes! Juicy watermelon flavor that's light, sweet, and perfectly captures that poolside feeling.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cherry -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap" style="background:linear-gradient(135deg,#ffcdd2,#ef9a9a);">
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;">🍒</div>
+        <span class="flavor-badge" style="background:#e53935;">New!</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Cherry</h3>
+        <p class="flavor-desc">Bold and berrylicious! Rich cherry flavor with just the right amount of sweetness. A vibrant red cloud of happiness.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grape -->
+    <div class="flavor-card fade-in">
+      <div class="flavor-img-wrap" style="background:linear-gradient(135deg,#e1bee7,#ce93d8);">
+        <div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:6rem;">🍇</div>
+        <span class="flavor-badge" style="background:#7b1fa2;">New!</span>
+      </div>
+      <div class="flavor-info">
+        <h3>Grape</h3>
+        <p class="flavor-desc">Sweet, fruity, and purple perfection! Classic grape candy flavor spun into a fluffy, dreamy cloud you'll love.</p>
+        <div class="flavor-bottom">
+          <span class="flavor-price">$3</span>
+          <a href="order.html" class="flavor-order-btn">Order</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sugar Swirls by Soha</h4>
+      <p>Freshly spun cotton candy for every occasion.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="order.html">Order</a>
+      <a href="quote.html">Request Quote</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 soha.zaara.ali@gmail.com</p>
+      <p>📍 Austin, TX</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>

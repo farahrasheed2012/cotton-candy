@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Sugar Swirls by Soha</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    <span>Sugar Swirls by Soha</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="flavors.html">Flavors</a>
+    <a href="order.html">Order</a>
+    <a href="quote.html">Request Quote</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
+
+<section class="not-found">
+  <h1>404</h1>
+  <p>Oops! This page got lost in the cotton candy clouds. ☁️🍭</p>
+  <a href="index.html" class="primary-btn">Back to Home</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

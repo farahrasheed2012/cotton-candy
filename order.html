@@ -2,98 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sugar Swirls by Soha - Order</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order | Sugar Swirls by Soha</title>
+  <meta name="description" content="Order freshly spun cotton candy from Sugar Swirls by Soha. Choose from 8 flavors!">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- ---------- Navbar ---------- -->
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
-      <span>Sugar Swirls by Soha</span>
-    </div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="flavors.html">Flavors</a>
-      <a href="order.html">Order</a>
-      <a href="quote.html">Request Quote</a>
-      <a href="about.html">About</a>
-    </div>
-  </nav>
 
-  <!-- ---------- Page Title ---------- -->
-  <h1>Order Your Cotton Candy!</h1>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
+    <span>Sugar Swirls by Soha</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="flavors.html">Flavors</a>
+    <a href="order.html" class="active">Order</a>
+    <a href="quote.html">Request Quote</a>
+    <a href="about.html">About</a>
+  </div>
+</nav>
 
-  <!-- ---------- Order Form ---------- -->
-  <form id="orderForm">
-    <input type="text" name="firstName" placeholder="First Name" required />
-    <input type="email" name="parentEmail" placeholder="Parent Email" required />
-    <input type="tel" name="phoneNumber" placeholder="Cell Phone Number (Optional)" />
-    <input type="date" name="orderDate" required />
+<section class="order-section">
+  <h2 class="section-title fade-in">Order Your Cotton Candy! 🍭</h2>
+  <p class="section-subtitle fade-in">Pick your flavors, tell us when, and we'll have them ready for you!</p>
+
+  <form id="orderForm" class="styled-form order-form fade-in">
+    <label for="firstName">Your Name</label>
+    <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+
+    <label for="parentEmail">Parent Email</label>
+    <input type="email" id="parentEmail" name="parentEmail" placeholder="parent@email.com" required>
+
+    <label for="phoneNumber">Phone Number <span style="color:#aaa;font-weight:400;">(optional)</span></label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="(512) 555-1234">
+
+    <label for="orderDate">Order Date</label>
+    <input type="date" id="orderDate" name="orderDate" required>
 
     <label>Flavors & Quantities:</label>
 
     <div class="flavor-row">
-      <span>Pink Vanilla</span>
-      <input type="number" min="0" name="pinkVanilla" placeholder="0">
+      <span><span class="flavor-emoji">🩷</span> Pink Vanilla</span>
+      <input type="number" min="0" name="pinkVanilla" value="0">
     </div>
-
     <div class="flavor-row">
-      <span>Blue Raspberry</span>
-      <input type="number" min="0" name="blueRaspberry" placeholder="0">
+      <span><span class="flavor-emoji">💙</span> Blue Raspberry</span>
+      <input type="number" min="0" name="blueRaspberry" value="0">
     </div>
-
     <div class="flavor-row">
-      <span>Strawberry</span>
-      <input type="number" min="0" name="strawberry" placeholder="0">
+      <span><span class="flavor-emoji">🍓</span> Strawberry</span>
+      <input type="number" min="0" name="strawberry" value="0">
+    </div>
+    <div class="flavor-row">
+      <span><span class="flavor-emoji">🍌</span> Banana</span>
+      <input type="number" min="0" name="banana" value="0">
+    </div>
+    <div class="flavor-row">
+      <span><span class="flavor-emoji">🎂</span> Birthday Cake</span>
+      <input type="number" min="0" name="birthdayCake" value="0">
+    </div>
+    <div class="flavor-row">
+      <span><span class="flavor-emoji">🍉</span> Watermelon</span>
+      <input type="number" min="0" name="watermelon" value="0">
+    </div>
+    <div class="flavor-row">
+      <span><span class="flavor-emoji">🍒</span> Cherry</span>
+      <input type="number" min="0" name="cherry" value="0">
+    </div>
+    <div class="flavor-row">
+      <span><span class="flavor-emoji">🍇</span> Grape</span>
+      <input type="number" min="0" name="grape" value="0">
     </div>
 
-    <button type="submit">Place Order</button>
+    <div id="orderTotal" style="text-align:center;font-size:1.1rem;font-weight:600;color:#e84d8a;padding:8px 0;">
+      Total: $0 (0 cones)
+    </div>
+
+    <button type="submit" class="form-submit-btn">Place Order 🎉</button>
   </form>
+</section>
 
-  <!-- ---------- JavaScript ---------- -->
-  <script>
-  document.getElementById("orderForm").addEventListener("submit", (e) => {
-    e.preventDefault();
-    const form = e.target;
+<!-- Success toast -->
+<div class="success-toast" id="successToast">✅ Order submitted! Check your email app to send.</div>
 
-    // Build flavors object
-    const flavors = {
-      "Pink Vanilla": parseInt(form.pinkVanilla.value) || 0,
-      "Blue Raspberry": parseInt(form.blueRaspberry.value) || 0,
-      "Strawberry": parseInt(form.strawberry.value) || 0
-    };
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sugar Swirls by Soha</h4>
+      <p>Freshly spun cotton candy for every occasion.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="quote.html">Request Quote</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 soha.zaara.ali@gmail.com</p>
+      <p>📍 Austin, TX</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
+  </div>
+</footer>
 
-    // Remove zero-quantity flavors
-    const selectedFlavors = Object.entries(flavors)
-      .filter(([_, qty]) => qty > 0)
-      .map(([name, qty]) => `${name}: ${qty}`)
-      .join("\n");
+<script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
 
-    if (!selectedFlavors) {
-      alert("Please select at least one flavor.");
-      return;
-    }
+// Scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    const firstName = form.firstName.value;
-    const parentEmail = form.parentEmail.value;
-    const phoneNumber = form.phoneNumber.value || "Not provided";
-    const orderDate = form.orderDate.value;
+// Live total calculation
+const pricePerCone = 3;
+const flavorInputs = document.querySelectorAll('.flavor-row input[type="number"]');
+flavorInputs.forEach(input => {
+  input.addEventListener('input', updateTotal);
+});
 
-    // Prepare email details
-    const subject = encodeURIComponent(`Cotton Candy Order from ${firstName}`);
-    const body = encodeURIComponent(
-      `Hello Sugar Swirls Team,\n\n` +
-      `Order from: ${firstName}\n` +
-      `Parent Email: ${parentEmail}\n` +
-      `Phone Number: ${phoneNumber}\n` +
-      `Order Date: ${orderDate}\n\n` +
-      `Flavors & Quantities:\n${selectedFlavors}\n\nThank you!`
-    );
+function updateTotal() {
+  let total = 0;
+  flavorInputs.forEach(input => { total += parseInt(input.value) || 0; });
+  document.getElementById('orderTotal').textContent =
+    `Total: $${total * pricePerCone} (${total} cone${total !== 1 ? 's' : ''})`;
+}
 
-    // Open default email client
-    window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
-  });
-  </script>
+// Form submission
+document.getElementById("orderForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = e.target;
+
+  const flavors = {
+    "Pink Vanilla": parseInt(form.pinkVanilla.value) || 0,
+    "Blue Raspberry": parseInt(form.blueRaspberry.value) || 0,
+    "Strawberry": parseInt(form.strawberry.value) || 0,
+    "Banana": parseInt(form.banana.value) || 0,
+    "Birthday Cake": parseInt(form.birthdayCake.value) || 0,
+    "Watermelon": parseInt(form.watermelon.value) || 0,
+    "Cherry": parseInt(form.cherry.value) || 0,
+    "Grape": parseInt(form.grape.value) || 0,
+  };
+
+  const selectedFlavors = Object.entries(flavors)
+    .filter(([_, qty]) => qty > 0)
+    .map(([name, qty]) => `  ${name}: ${qty}`)
+    .join("\n");
+
+  if (!selectedFlavors) {
+    alert("Please select at least one flavor! 🍭");
+    return;
+  }
+
+  const totalCones = Object.values(flavors).reduce((a, b) => a + b, 0);
+  const totalPrice = totalCones * pricePerCone;
+
+  const firstName = form.firstName.value;
+  const parentEmail = form.parentEmail.value;
+  const phoneNumber = form.phoneNumber.value || "Not provided";
+  const orderDate = form.orderDate.value;
+
+  const subject = encodeURIComponent(`Cotton Candy Order from ${firstName}`);
+  const body = encodeURIComponent(
+    `Hello Sugar Swirls Team!\n\n` +
+    `Order from: ${firstName}\n` +
+    `Parent Email: ${parentEmail}\n` +
+    `Phone: ${phoneNumber}\n` +
+    `Requested Date: ${orderDate}\n\n` +
+    `Flavors & Quantities:\n${selectedFlavors}\n\n` +
+    `Total: ${totalCones} cones = $${totalPrice}\n\n` +
+    `Thank you!`
+  );
+
+  // Show success toast
+  const toast = document.getElementById('successToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
+
+  // Open email client
+  window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
+});
+</script>
+
 </body>
 </html>

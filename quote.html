@@ -1,57 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Request Quote | Cotton Candy</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Quote | Sugar Swirls by Soha</title>
+  <meta name="description" content="Request a custom quote for your event. Cotton candy packages for birthdays, school events, and more.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍭</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<!-- Navbar -->
 <nav class="navbar">
   <div class="logo">
     <img src="images/SohaCottonCandyLogo.png" alt="Sugar Swirls by Soha Logo">
     <span>Sugar Swirls by Soha</span>
   </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="flavors.html">Flavors</a>
     <a href="order.html">Order</a>
-    <a href="quote.html">Request Quote</a>
+    <a href="quote.html" class="active">Request Quote</a>
     <a href="about.html">About</a>
   </div>
 </nav>
 
 <section class="quote-section">
-  <h2>Request a Quote</h2>
-  <form id="quoteForm" class="order-form">
-    <input name="name" placeholder="Your Name" required>
-    <input name="email" type="email" placeholder="Parent Email" required>
-    <textarea name="details" placeholder="Event Details"></textarea>
-    <button class="primary-btn" type="submit">Submit Request</button>
+  <h2 class="section-title fade-in">Request a Quote 🎉</h2>
+  <p class="section-subtitle fade-in">Planning an event? Tell us the details and we'll put together a custom package for you!</p>
+
+  <form id="quoteForm" class="styled-form order-form fade-in">
+    <label for="quoteName">Your Name</label>
+    <input type="text" id="quoteName" name="name" placeholder="Your Name" required>
+
+    <label for="quoteEmail">Parent Email</label>
+    <input type="email" id="quoteEmail" name="email" placeholder="parent@email.com" required>
+
+    <label for="quotePhone">Phone Number <span style="color:#aaa;font-weight:400;">(optional)</span></label>
+    <input type="tel" id="quotePhone" name="phone" placeholder="(512) 555-1234">
+
+    <label for="eventDate">Event Date</label>
+    <input type="date" id="eventDate" name="eventDate">
+
+    <label for="guestCount">Estimated Number of Guests</label>
+    <input type="number" id="guestCount" name="guestCount" min="1" placeholder="e.g. 50">
+
+    <label for="eventType">Event Type</label>
+    <select id="eventType" name="eventType" style="padding:14px 16px;border-radius:12px;border:2px solid #f0e0ea;font-size:1rem;font-family:inherit;">
+      <option value="">Select event type...</option>
+      <option value="birthday">Birthday Party</option>
+      <option value="school">School Event</option>
+      <option value="fair">Fair / Festival</option>
+      <option value="wedding">Wedding</option>
+      <option value="corporate">Corporate Event</option>
+      <option value="other">Other</option>
+    </select>
+
+    <label for="quoteDetails">Additional Details</label>
+    <textarea id="quoteDetails" name="details" placeholder="Tell us about your event — theme, colors, any special requests..."></textarea>
+
+    <button type="submit" class="form-submit-btn">Submit Request ✨</button>
   </form>
 </section>
 
+<!-- Success toast -->
+<div class="success-toast" id="successToast">✅ Quote request submitted! Check your email app to send.</div>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Sugar Swirls by Soha</h4>
+      <p>Freshly spun cotton candy for every occasion.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="flavors.html">Flavors</a>
+      <a href="order.html">Order</a>
+      <a href="about.html">About</a>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>📧 soha.zaara.ali@gmail.com</p>
+      <p>📍 Austin, TX</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Sugar Swirls by Soha. All rights reserved.</p>
+  </div>
+</footer>
+
 <script>
+function toggleMenu() {
+  document.querySelector('.hamburger').classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+}
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
 document.getElementById("quoteForm").onsubmit = (e) => {
   e.preventDefault();
   const form = e.target;
 
   const name = form.name.value;
-  const parentEmail = form.email.value;
-  const details = form.details.value;
+  const email = form.email.value;
+  const phone = form.phone.value || "Not provided";
+  const eventDate = form.eventDate.value || "TBD";
+  const guestCount = form.guestCount.value || "TBD";
+  const eventType = form.eventType.value || "Not specified";
+  const details = form.details.value || "None provided";
 
   const subject = encodeURIComponent(`Quote Request from ${name}`);
   const body = encodeURIComponent(
-    `Hello Sugar Swirls Team,\n\n` +
+    `Hello Sugar Swirls Team!\n\n` +
     `Name: ${name}\n` +
-    `Parent Email: ${parentEmail}\n` +
-    `Event Details:\n${details}\n\nThank you!`
+    `Parent Email: ${email}\n` +
+    `Phone: ${phone}\n` +
+    `Event Date: ${eventDate}\n` +
+    `Estimated Guests: ${guestCount}\n` +
+    `Event Type: ${eventType}\n\n` +
+    `Additional Details:\n${details}\n\nThank you!`
   );
 
-  // Open default mail app
-  window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
+  const toast = document.getElementById('successToast');
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 4000);
 
+  window.location.href = `mailto:soha.zaara.ali@gmail.com?subject=${subject}&body=${body}`;
   form.reset();
 };
 </script>
+
 </body>
 </html>
